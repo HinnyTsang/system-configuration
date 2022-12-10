@@ -18,7 +18,9 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    direnv
     docker
     docker-compose
+    xh # for HTTP request.
   ];
 }
