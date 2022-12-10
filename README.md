@@ -18,20 +18,18 @@ Example template
 ```nix
 { pkgs ? import
     (fetchTarball {
-      name = "nixos-unstable-2022-10-14";
-      url = "https://github.com/nixos/nixpkgs/archive/a114755d05c1a590ece2e3ecff31e43e07334b5e.tar.gz";
+      name = "nixos-<version>";
+      url = "https://github.com/nixos/nixpkgs/archive/<hash>.tar.gz";
       # Hash obtained using `nix-prefetch-url --unpack <url>`
-      sha256 = "0bh1w9jw4r45a5rrw4wc02k4yajm64r0prsr6z20ybi5zgai727v";
+      sha256 = "<hash>";
     })
     { }
 }:
 
 pkgs.mkShell {
   nativeBuildInputs = [
-    pkgs.postgresql
-    pkgs.poetry
-    pkgs.redis
-    pkgs.watchexec
+    pkgs.<package-name>
+    ...
   ];
 }
 ```
