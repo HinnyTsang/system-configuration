@@ -4,15 +4,13 @@
 
 ## TODO
 - [ ] NIX required setting.
-    - [ ] npm
-    - [ ] docker
-    - [ ] python
-        - [ ] poetry ?
-    - [ ]
-    - [ ] gcloud ?
-    - [ ] kubectl ? 
-    - [ ] direnv [^1] 
-        - Auto install when get into directory.
+  - [ ] npm
+  - [ ] docker
+  - [ ] python
+    - [ ] poetry ?
+  - [ ] kubectl ? 
+  - [ ] direnv [^1] 
+    - Auto install when get into directory.
 
 ## Nix notes
 Example template
@@ -47,6 +45,12 @@ Update home manager setting
 ```
 home-manager switch
 ```
+
+Remove garbage
+```bash
+nix-collect-garbage
+```
+
 
 [^1]: https://direnv.net/
 [^2]: https://nix.dev/
