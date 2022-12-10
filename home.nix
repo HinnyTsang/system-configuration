@@ -22,6 +22,7 @@
     docker
     docker-compose
     neovim
+    poetry
     vscode
     xh # for HTTP request.
   ];
