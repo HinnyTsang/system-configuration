@@ -21,6 +21,8 @@
     direnv
     docker
     docker-compose
+    neovim
+    vscode
     xh # for HTTP request.
   ];
 }
