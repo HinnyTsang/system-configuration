@@ -1,11 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = 
-    [
-      ./git.nix
-      ./configuration.nix
-    ];
+  imports = [ ./git.nix ./configuration.nix ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -22,6 +18,7 @@
     docker
     docker-compose
     neovim
+    nixfmt
     poetry
     vscode
     xh # for HTTP request.

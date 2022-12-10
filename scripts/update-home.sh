@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Override the default config with our config.
-
 for nix_file in \
     "configuration.nix" \
     "git.nix" \
