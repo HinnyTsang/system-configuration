@@ -23,4 +23,14 @@
     vscode
     xh # for HTTP request.
   ];
-}
+  
+  # direnv
+  programs.direnv = {
+    enable = true;
+    nix-direnv = {
+      enable = true
+    };
+  };
+};
+
+
