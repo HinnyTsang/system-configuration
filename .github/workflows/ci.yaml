@@ -16,10 +16,16 @@ jobs:
       - uses: cachix/install-nix-action@v18
         with:
           nix_path: nixpkgs=channel:nixos-unstable
+
       - name: Print nixpkgs version
         run: |
           nix-instantiate --eval -E '(import <nixpkgs> {}).lib.version'
+
+      - name: Install packages
+        run: |
+          ./scripts/install-home-manager.sh
+
       - name: lint check
         run: |
-          ./script/check-nix.sh
+          ./scripts/check-nix.sh
           
