@@ -20,9 +20,7 @@
     neovim
     nixfmt
     poetry
-    vscode
     xh # for HTTP request.
+    kaggle
   ];
-
-  
 }
