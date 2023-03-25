@@ -1,17 +1,25 @@
 #!/bin/bash
 
 # Install Nix
-# sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume --daemon # installation with macOS
-sh <(curl -L https://nixos.org/nix/install) --no-daemon # install with wsl, single user mode.
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "Installing Nix on macOS"
+    sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume --daemon
+else
+    echo "Installing Nix on Linux"
+    sh <(curl -L https://nixos.org/nix/install) --no-daemon
+fi
+
+. "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 # Add channel for home manager.
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz home-manager
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
 nix-channel --update
 
 # Export NIX_PATH
-export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
-echo 'export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels\n' >> ~/.bash_profile
-# echo 'export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels\n' >> ~/.zshenv 
+echo "Exporting NIX_PATH"
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/hinny/channels${NIX_PATH:+:$NIX_PATH}
+echo 'export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/hinny/channels' >>~/.bashrc
 
 # Install home manager
 nix-shell '<home-manager>' -A install
@@ -21,6 +29,9 @@ nix-shell '<home-manager>' -A install
 
 # Override the default config with our config.
 cp *.nix ~/.config/nixpkgs/
+cp ./dotfiles/.* ~/
 
 # build the home environment
+echo "Building home environment"
 home-manager build
+echo "Done"
