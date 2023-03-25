@@ -13,13 +13,12 @@ fi
 
 # Add channel for home manager.
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+nix-channel --add https://nixos.org/channels/nixos-22.11 nixpkgs
 nix-channel --update
 
 # Export NIX_PATH
 echo "Exporting NIX_PATH"
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/hinny/channels${NIX_PATH:+:$NIX_PATH}
-echo 'export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/hinny/channels' >>~/.bashrc
 
 # Install home manager
 nix-shell '<home-manager>' -A install
@@ -30,6 +29,7 @@ nix-shell '<home-manager>' -A install
 # Override the default config with our config.
 cp *.nix ~/.config/nixpkgs/
 cp ./dotfiles/.* ~/
+echo 'export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/hinny/channels' >>~/.bashrc
 
 # build the home environment
 echo "Building home environment"
