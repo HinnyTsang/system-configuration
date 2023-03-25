@@ -9,18 +9,9 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "hinny";
-  home.homeDirectory = "/Users/hinny";
-  home.stateVersion = "22.05";
+  home.homeDirectory = "/users/hinny";
+  home.stateVersion = "22.11";
 
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [
-    direnv
-    docker
-    docker-compose
-    neovim
-    nixfmt
-    poetry
-    xh # for HTTP request.
-    kaggle
-  ];
+  home.packages = with pkgs; [ direnv nixfmt xh zlib ];
 }

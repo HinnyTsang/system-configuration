@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  i18n.inputMethod = {
-    enabled = null;
-  };
+  i18n.inputMethod = { enabled = null; };
 }
