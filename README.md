@@ -1,56 +1,19 @@
-# Config system
+# System configuration
 
+Simple system configuration using [Nix](https://nixos.org/nix/). With nix, the system configuration is declarative and reproducible.
 
+## Installation
 
-## TODO
-- [ ] NIX required setting.
-  - [ ] npm
-  - [ ] docker
-  - [ ] python
-    - [ ] poetry ?
-  - [ ] kubectl ? 
-  - [ ] direnv [^1] 
-    - Auto install when get into directory.
+Install nix and build required packages with home-manager.
 
-## Nix notes
-Example template
-
-```nix
-{ pkgs ? import
-    (fetchTarball {
-      name = "nixos-<version>";
-      url = "https://github.com/nixos/nixpkgs/archive/<hash>.tar.gz";
-      # Hash obtained using `nix-prefetch-url --unpack <url>`
-      sha256 = "<hash>";
-    })
-    { }
-}:
-
-pkgs.mkShell {
-  nativeBuildInputs = [
-    pkgs.<package-name>
-    ...
-  ];
-}
-```
-
-Install a package and open a shell.
 ```bash
-nix-shell -p <package-name>
+./scripts/install-nix.sh
 ```
 
-Update home manager setting
-```
-home-manager switch
-```
+## Update home packages
 
-Remove garbage
+Update the `home.nix` file and run the following command to update the packages.
+
 ```bash
-nix-collect-garbage
+./scripts/update.sh
 ```
-
-
-[^1]: https://direnv.net/
-[^2]: https://nix.dev/
-[^3]: https://nixos.org/manual/nix/stable/language/index.html
-[^4]: https://nixos.org/guides/nix-pills/

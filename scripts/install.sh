@@ -32,6 +32,4 @@ cp ./dotfiles/.* ~/
 echo 'export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/hinny/channels' >>~/.bashrc
 
 # build the home environment
-echo "Building home environment"
 home-manager build
-echo "Done"
