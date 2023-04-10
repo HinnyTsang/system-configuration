@@ -15,4 +15,4 @@ jobs:
           nix_path: nixpkgs=channel:nixos-22.11
       - name: Build Nix Home Manager configuration
         working-directory: ${{ github.workspace }}
-        run: ./scripts/install.shF
+        run: ./scripts/install.sh
