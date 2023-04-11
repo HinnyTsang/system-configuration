@@ -4,7 +4,8 @@
 for nix_file in \
     "configuration.nix" \
     "git.nix" \
-    "home.nix"; do
+    "home.nix" \
+    "zsh.nix"; do
     echo "Overriding $nix_file"
     cp $nix_file ~/.config/nixpkgs/$nix_file
 done

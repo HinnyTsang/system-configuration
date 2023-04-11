@@ -4,11 +4,17 @@ Simple system configuration using [Nix](https://nixos.org/nix/). With nix, the s
 
 ## Installation
 
-Install nix and build required packages with home-manager.
+1. Install nix and build required packages with home-manager.
 
-```bash
-./scripts/install-nix.sh
-```
+    ```bash
+    ./scripts/install-nix.sh
+    ```
+
+2. Set zsh as default shell.
+
+    ```bash
+    sudo chsh -s $(which zsh) $(whoami)
+    ```
 
 ## Update home packages
 

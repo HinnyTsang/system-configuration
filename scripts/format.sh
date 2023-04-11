@@ -4,7 +4,8 @@
 for nix_file in \
     "configuration.nix" \
     "git.nix" \
-    "home.nix"; do
+    "home.nix" \
+    "zsh.nix"; do
     echo "================================"
     echo "===== formatting $nix_file ====="
     echo "================================"
