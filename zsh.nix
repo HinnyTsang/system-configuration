@@ -3,6 +3,7 @@
 {
   programs.zsh = {
     enable = true;
+    enableAutosuggestions = true;
     shellAliases = { ll = "ls -l"; };
     history = {
       size = 10000;
@@ -15,4 +16,9 @@
     };
     localVariables = { EDITOR = "vim"; };
   };
+
+  home.file.".zshrc".text = ''
+    source "$HOME/.nix-profile/etc/profile.d/nix.sh"
+    eval "$(direnv hook zsh)"
+  '';
 }

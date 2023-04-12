@@ -10,5 +10,8 @@ for nix_file in \
     cp $nix_file ~/.config/nixpkgs/$nix_file
 done
 
+# Override the default config with our config.
+cp ./dotfiles/.* ~/
+
 # build the home environment
 home-manager switch

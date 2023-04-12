@@ -10,12 +10,6 @@ Simple system configuration using [Nix](https://nixos.org/nix/). With nix, the s
     ./scripts/install-nix.sh
     ```
 
-2. Set zsh as default shell.
-
-    ```bash
-    sudo chsh -s $(which zsh) $(whoami)
-    ```
-
 ## Update home packages
 
 Update the `home.nix` file and run the following command to update the packages.
