@@ -13,5 +13,5 @@
   home.stateVersion = "22.11";
 
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [ direnv nixfmt xclip xh zlib ];
+  home.packages = with pkgs; [ direnv lazygit nixfmt xclip xh zlib ];
 }
