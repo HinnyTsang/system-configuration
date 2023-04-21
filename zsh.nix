@@ -4,6 +4,7 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
+    enableCompletion = true;
     shellAliases = { ll = "ls -l"; };
     history = {
       size = 10000;
