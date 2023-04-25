@@ -17,3 +17,13 @@ Update the `home.nix` file and run the following command to update the packages.
 ```bash
 ./scripts/update.sh
 ```
+
+## Update nix config
+
+Open `/etc/nix/nix.conf` and add the following line to enable the binary cache and flake.
+
+```text
+experimental-features = nix-command flakes
+keep-derivations = true
+keep-outputs = true
+```

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./git.nix ./configuration.nix ./zsh.nix ];
+  imports = [ ./git.nix ./configuration.nix ./vscode.nix ./zsh.nix ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -12,14 +12,12 @@
   home.homeDirectory = "/home/hinny";
   home.stateVersion = "22.11";
 
+  # nix direnv, used to prevent gc to shells
+  programs.direnv = {
+    enable = true;
+    nix-direnv = { enable = true; };
+  };
+
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [
-    direnv
-    lazygit
-    nixfmt
-    rnix-lsp
-    xclip
-    xh
-    zlib
-  ];
+  home.packages = with pkgs; [ lazygit nixfmt rnix-lsp xclip xh zlib ];
 }
