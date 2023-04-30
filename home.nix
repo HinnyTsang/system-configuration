@@ -19,5 +19,13 @@
   };
 
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [ lazygit nixfmt rnix-lsp xclip xh zlib ];
+  home.packages = with pkgs; [
+    lazydocker
+    lazygit
+    nixfmt
+    rnix-lsp
+    xclip
+    xh
+    zlib
+  ];
 }
