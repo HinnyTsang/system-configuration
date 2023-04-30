@@ -5,7 +5,12 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
-    shellAliases = { ll = "ls -l"; };
+    shellAliases = {
+      du = "du -ah -d 1";
+      ll = "ls -l";
+      lzd = "lazydocker";
+      lzg = "lazygit";
+    };
     history = {
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";

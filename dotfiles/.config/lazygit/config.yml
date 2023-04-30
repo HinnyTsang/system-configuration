@@ -1,0 +1,4 @@
+git:
+  branchLogCmd: "git l --color=always --decorate"
+  allBranchesLogCmd: "git l --all --color=always --decorate"
+
