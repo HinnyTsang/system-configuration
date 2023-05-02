@@ -22,6 +22,8 @@
   home.packages = with pkgs; [
     lazydocker
     lazygit
+    nix-du
+    nix-tree
     nixfmt
     rnix-lsp
     xclip
