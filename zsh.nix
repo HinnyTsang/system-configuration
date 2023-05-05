@@ -10,6 +10,8 @@
       ll = "ls -l";
       lzd = "lazydocker";
       lzg = "lazygit";
+      vi = "nvim";
+      vim = "nvim";
     };
     history = {
       size = 10000;
