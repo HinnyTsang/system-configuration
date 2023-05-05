@@ -8,5 +8,10 @@
     '';
     viAlias = true;
     vimAlias = true;
+    plugins = with pkgs.vimPlugins; [
+
+      # helper
+      copilot-vim
+    ];
   };
 }
