@@ -22,12 +22,6 @@
     enable = true;
     nix-direnv = { enable = true; };
   };
-  # 
-  services.xserver.enable = true;
-  services.xserver.displayManager = {
-    gdm.enable = true;
-    gnome.enable = true;
-  };
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
