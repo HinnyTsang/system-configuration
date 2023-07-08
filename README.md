@@ -27,3 +27,9 @@ experimental-features = nix-command flakes
 keep-derivations = true
 keep-outputs = true
 ```
+
+## Windows configurations
+
+Install windows terminal & set up oh-my-posh [link](https://ohmyposh.dev/docs/installation/windows).
+
+Config themes, material theme is recommended personally.
