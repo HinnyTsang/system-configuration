@@ -3,9 +3,7 @@
 {
   programs.git = {
     enable = true;
-    extraConfig = {
-      core.editor = "nvim";
-    };
+    extraConfig = { core.editor = "nvim"; };
     userEmail = "mhstsangab@connect.ust.hk";
     userName = "HinnyTsang";
     aliases = {
