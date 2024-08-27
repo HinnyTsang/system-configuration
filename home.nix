@@ -1,12 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./git.nix
-    ./configuration.nix
-    ./neovim.nix
-    ./zsh.nix
-  ];
+  imports = [ ./git.nix ./configuration.nix ./neovim.nix ./zsh.nix ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -28,6 +23,7 @@
     docker
     lazydocker
     lazygit
+    nil
     nix-du
     nix-tree
     nixfmt
