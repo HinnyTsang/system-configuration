@@ -1,22 +1,28 @@
--- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+require("config.lazy")
 
--- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
+-- Enable relative line numbers
+vim.opt.relativenumber = true
 
--- show line numbers
-vim.opt.number = true
+-- Enable syntax highlighting
+vim.cmd('syntax on')
 
-require("nvim-web-devicons").setup()
-require("nvim-tree").setup({
-  sort_by = "case_sensitive",
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-})
+-- Set encoding to UTF-8
+vim.opt.encoding = 'utf-8'
 
+-- Enable mouse support
+vim.opt.mouse = 'a'
+
+-- Highlight the current line
+vim.opt.cursorline = true
+
+-- Highlight matching parentheses
+vim.opt.showmatch = true
+
+-- Load Python 3 provider
+vim.g.loaded_python3_provider = 1
+vim.g.python3_host_prog = "C:\\Users\\hinny\\.pyenv\\pyenv-win\\versions\\3.10.0\\python.exe"
+
+
+-- keybindings
+vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
